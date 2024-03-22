@@ -35,6 +35,13 @@ function getCodeCoverageOptions(codeCoverageDir) {
         outputDir: "raw",
       },
     ],
+    ["v8"],
+    [
+      "console-details",
+      {
+        metrics: ["lines"],
+      },
+    ],
   ];
 
   // for documentation on the monocart code coverage options see:
