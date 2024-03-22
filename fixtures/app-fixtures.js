@@ -18,7 +18,6 @@ export const test = baseTest.extend({
         enableJsCoverage: true,
         enableCssCoverage: true,
       };
-      console.log("page32", page);
       await collectV8CodeCoverageAsync(options);
     },
     {
