@@ -5,7 +5,7 @@ const EC = require('eight-colors');
 const MCR = require('monocart-coverage-reports');
 const coverageOptions = {
   name: 'My Merged Coverage Report',
-  inputDir: ['./coverage-reports/unit/raw', './coverage-reports/e2e/raw'],
+  inputDir: ['./coverage-results/raw', ./testresults/ct/raw'],
   outputDir: './coverage-reports/merged',
   reports: [['v8'], ['console-summary']],
   // onEnd: () => {
