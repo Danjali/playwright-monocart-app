@@ -29,7 +29,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test",
+    "test": "craco test --watchAll",
     "test:e2e": "playwright test",
     "coverage": "npx playwright test",
     "eject": "react-scripts eject"
