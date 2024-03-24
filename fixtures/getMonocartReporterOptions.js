@@ -70,6 +70,15 @@ function getCodeCoverageOptions(codeCoverageDir) {
       );
     },
     sourceFilter: (sourcePath) => {
+       if (
+        sourcePath.includes("node_modules") ||
+        sourcePath.includes("webpack")
+      ) {
+        return false;
+      }
+      if (sourcePath.includes(".css") || sourcePath.includes(".svg")) {
+        return false;
+      }
       // Only include files that are under the src folder.
       // Configure this filter accordingly to your app.
       if (sourcePath && sourcePath.startsWith(".npm")) {
