@@ -1,13 +1,9 @@
 import { defineConfig, devices } from "@playwright/test";
 import path from "path";
-import EC from "eight-colors";
 import { getMonocartReporterOptions } from "./fixtures/getMonocartReporterOptions";
-// import { getMonocartReporterOptions } from "./fixtures/getMonocartReporterOptions";
 
-const _testResultsDir = path.resolve("./testresults");
+const _testResultsDir = path.resolve("./playwright-coverage-results");
 const _codeCoverageDir = path.resolve(_testResultsDir, "ct");
-
-let coverageResults;
 
 export default defineConfig({
   // Look for test files in the "tests" directory, relative to this configuration file.
@@ -32,30 +28,6 @@ export default defineConfig({
     [
       "monocart-reporter",
       getMonocartReporterOptions(_testResultsDir, _codeCoverageDir),
-      // {
-      //   name: "My e2e Test Report with coverage",
-      //   outputFile: "./testresults/report.html",
-      //   coverage: {
-      //     onEnd: (_coverageResults) => {
-      //       coverageResults = _coverageResults;
-      //     },
-      //   },
-      //   onEnd: (reportData) => {
-      //     if (coverageResults) {
-      //       const { pct, status } = coverageResults.summary;
-      //       let value = `${status} (${pct}%)`;
-      //       if (status === "low") {
-      //         value = EC.red(value);
-      //       } else if (status === "medium") {
-      //         value = EC.yellow(value);
-      //       }
-      //       reportData.summary.coverage = {
-      //         name: "Coverage",
-      //         value,
-      //       };
-      //     }
-      //   },
-      // },
     ],
   ],
   use: {
