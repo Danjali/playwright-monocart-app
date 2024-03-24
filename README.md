@@ -6,7 +6,7 @@ Firstly, run  `npm run test` to run the jest unit test cases and to generate the
 Secondly, run  `npm run test:e2e` to run the playwright e2e test cases and to generate the code coverage in `playwright-coverage-results` folder.
 Lastly, run `node meregReports.js` to merge the jest and playwright code coverage.
 
-Note: I used Node version is v20.6.0
+Note: Node version is v20.6.0
 
 
 
