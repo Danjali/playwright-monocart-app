@@ -1,4 +1,4 @@
-# jest-playwright-monocart-app
+# playwright-monocart-app
 
 Merge coverage reports from jest and playwright using monocart-reporter.
 
