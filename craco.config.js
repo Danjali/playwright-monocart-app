@@ -9,23 +9,22 @@ module.exports = {
   jest: {
     configure: {
       collectCoverage: true,
-      testMatch: ["<rootDir>/src/test/"],
-      testPathIgnorePatterns: ["<rootDir>/src/utils/"],
-      // transformIgnorePatterns: ['node_modules/(?!@shotgunjed)/'],
+      // testMatch: ["<rootDir>/src/test/"],
       // Recommended to use `v8` to support the generation of native v8 coverage reports.
       coverageProvider: "v8",
-      // // Monocart can also support all coverage reports, so there is no need to set up reports here.
       coverageReporters: ["none"],
+      // testPathIgnorePatterns: ["<rootDir>/src/utils/Title.test.tsx"],
+      // Monocart can also support all coverage reports, so there is no need to set up reports here.
       reporters: [
-        //   // If custom reporters are specified, the default Jest reporter will be overridden. If you wish to keep it, 'default' must be passed as a reporters name:
+        // If custom reporters are specified, the default Jest reporter will be overridden. If you wish to keep it, 'default' must be passed as a reporters name:
         "default",
-        //   // Monocart custom reporter to generate coverage reports.
+        // Monocart custom reporter to generate coverage reports.
         [
           "jest-monocart-coverage",
           {
             name: "Jest Monocart Coverage Report",
             reports: [["v8"], ["console-summary"], ["lcovonly"], ["raw"]],
-            outputDir: "./coverage-results",
+            outputDir: "./jest-coverage-results",
           },
         ],
       ],
