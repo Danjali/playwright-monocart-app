@@ -8,6 +8,16 @@ const coverageOptions = {
     "./jest-coverage-results/raw",
     "./playwright-coverage-results/ct/raw",
   ],
+  sourceFilter: {
+    "**/node_modules/**": false,
+    "**/webpack/**": false,
+    "**/*.css/**": false,
+    "**/*.less/**": false,
+    "**/*.less": false,
+    "**/*.css": false,
+    "**/*.svg": false,
+    "**/*": true,
+  },
   outputDir: "./merged-coverage-reports/merged",
   reports: [["v8"], ["console-summary"]],
   onEnd: () => {
