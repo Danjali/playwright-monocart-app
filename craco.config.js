@@ -4,6 +4,7 @@ const CompressionPlugin = require("compression-webpack-plugin");
 const zlib = require("zlib");
 
 const { BROTLI_PARAM_QUALITY } = zlib.constants;
+const path = require("path");
 
 module.exports = {
   jest: {
@@ -23,7 +24,10 @@ module.exports = {
           "jest-monocart-coverage",
           {
             sourcePath: (filePath, info) => {
-              return path.resolve(__dirname, "src", filePath);
+              if (!filePath.includes("/") && info.distFile) {
+                return `${path.dirname(info.distFile)}/${filePath}`;
+              }
+              return filePath;
             },
             name: "Jest Monocart Coverage Report",
             reports: [["v8"], ["console-summary"], ["lcovonly"], ["raw"]],
