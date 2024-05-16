@@ -22,6 +22,9 @@ module.exports = {
         [
           "jest-monocart-coverage",
           {
+            sourcePath: (filePath, info) => {
+              return path.resolve(__dirname, "src", filePath);
+            },
             name: "Jest Monocart Coverage Report",
             reports: [["v8"], ["console-summary"], ["lcovonly"], ["raw"]],
             outputDir: "./jest-coverage-results",
